@@ -14,6 +14,15 @@ const server = http.createServer((request, response) => {
                 response.end(content);
             })
     }
+    if (request.url === '/api/users') {
+        const users = [
+            {name:'Bob Smith', age:40},
+            {name:'John Doe',age:30}
+        ];
+        response.writeHead(200, { 'Content-Type': 'application/json' });
+        response.end(JSON.stringify(users));
+
+    }
 });
 
 // Look for local environment port, otherwise runs port 5000
