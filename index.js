@@ -72,7 +72,7 @@ const server = http.createServer((request, response) => {
             }
         }else{
             // Sucess
-            response.writeHead(200, { 'Content-Type': 'text/html' });
+            response.writeHead(200, { 'Content-Type': contentType });
             response.end(content,'utf8');
         }
     })
